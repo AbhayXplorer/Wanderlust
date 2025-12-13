@@ -28,12 +28,29 @@ module.exports.showListing = async (req, res) => {
 };
 
 module.exports.createListing = async (req, res, next) => {
-  const newListing = new Listing(req.body.listing);
-  newListing.owner = req.user._id;
-  await newListing.save();
-  req.flash("success", "New Listing Created!");
-  res.redirect("/listings");
+  try {
+    const newListing = new Listing(req.body.listing || {});
+
+    // save image object if present
+    if (req.body.image) {
+      newListing.image = {
+        url: req.body.image.url,
+        filename: req.body.image.filename
+      };
+      console.log("Saving image to DB:", newListing.image);
+    } else {
+      console.log("No image in req.body");
+    }
+
+    newListing.owner = req.user._id;
+    await newListing.save();
+    req.flash("success", "New Listing Created!");
+    res.redirect("/listings");
+  } catch (err) {
+    next(err);
+  }
 };
+
 
 module.exports.renderEditForm = async (req, res) => {
   let { id } = req.params;

@@ -5,13 +5,56 @@ const Listing  = require("../models/listing.js");
 const {isLoggedIn, isOwner, validateListing} = require("../middleware.js");
 
 const listingController = require("../controllers/listings.js");
+const multer = require('multer');
+
+const streamifier = require('streamifier');
+const { cloudinary } = require("../cloudConfig.js");
+const upload = multer({ storage: multer.memoryStorage() });
 
 router.route("/")
   .get(wrapAsync(listingController.index))
-  // .post(isLoggedIn, validateListing, wrapAsync(listingController.createListing));
-  .post((req, res) => {
-    res.send(req.body);
-  });
+  .post(
+    isLoggedIn,
+    upload.single("listing[image]"), 
+    async (req, res) => {
+      try {
+        if (!req.file) {
+          req.flash("error", "No image uploaded");
+          return res.redirect("/listings/new");
+        }
+
+        const uploadToCloudinary = (buffer, folder = "wanderlust_DEV") => {
+          return new Promise((resolve, reject) => {
+            const uploadStream = cloudinary.uploader.upload_stream(
+              { folder, resource_type: "image" }, 
+              (error, result) => {
+                if (error) return reject(error);
+                resolve(result); 
+              }
+            );
+            streamifier.createReadStream(buffer).pipe(uploadStream);
+          });
+        };
+
+        const result = await uploadToCloudinary(req.file.buffer);
+
+        console.log("Cloudinary result:", result);
+
+        req.body.image = {
+          url: result.secure_url,       
+          filename: result.public_id   
+        };
+
+        return listingController.createListing(req, res);
+
+      } catch (err) {
+        console.error("Upload error:", err);
+        req.flash("error", "Image upload failed");
+        return res.redirect("/listings/new");
+      }
+    }
+  );
+
 
 //New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
