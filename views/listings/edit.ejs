@@ -19,6 +19,11 @@
         </div>
 
         <div class="mb-3">
+          Original Listing Image <br />
+          <img src="<%= originalImageUrl %>" />
+        </div>
+
+        <div class="mb-3">
           <label for="image" class="form-label">Update Listing Image</label>
           <input name="listing[image]" type="file" class="form-control" />   
           <div class="invalid-feedback">Please enter a valid Image</div>
@@ -44,8 +49,7 @@
           <div class="invalid-feedback">Location should be valid</div>
         </div>
 
-        <button class="btn btn-dark edit-btn mt-3">Edit</button>
+        <button class="btn btn-dark edit-btn mt-2 mb-4">Edit</button>
       </form>
     </div>
   </div>
-  
