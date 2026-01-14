@@ -11,15 +11,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/listings">Explore</a>
-        <a class="nav-link" href="/listings/new">Add new Listings</a>
+        <a class="nav-link nav-item-custom" href="/">Home</a>
+        <a class="nav-link nav-item-custom" href="/listings">Explore</a>
+        <a class="nav-link nav-item-custom" href="/listings/new">Add new Listings</a>
       </div>
       <div class="navbar-nav ms-auto">
         <% if(!currUser) { %>
           <a class="nav-auth-btnn" href="/login">Log in</a>
           <a class="nav-auth-btnn" href="/signup">Sign up</a>
         <% } %> <% if(currUser) { %>
+          <span class="nav-username">Hi, <%= currUser.username %></span>
           <a class="nav-auth-btnn" href="/logout">Log out</a>
         <% } %>
       </div>

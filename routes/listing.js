@@ -59,18 +59,13 @@ router.route("/")
 //New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 
-// router.route("/:id")
-//   .get(wrapAsync(listingController.showListing))
-//   .put(isLoggedIn, isOwner, validateListing, wrapAsync(listingController.updateListing))
-//   .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing));
-
 router.route("/:id")
   .get(wrapAsync(listingController.showListing))
 
   .put(
     isLoggedIn,
     isOwner,
-    upload.single("listing[image]"), // ✅ CORRECT FIELD NAME
+    upload.single("listing[image]"),
     async (req, res) => {
       if (req.file) {
         const uploadStream = cloudinary.uploader.upload_stream(
@@ -81,7 +76,6 @@ router.route("/:id")
               return res.redirect("back");
             }
 
-            // ✅ attach image data
             req.body.listing.image = {
               url: result.secure_url,
               filename: result.public_id
@@ -96,7 +90,6 @@ router.route("/:id")
           .pipe(uploadStream);
 
       } else {
-        // ✅ no new image
         listingController.updateListing(req, res);
       }
     }
@@ -107,7 +100,6 @@ router.route("/:id")
     isOwner,
     wrapAsync(listingController.destroyListing)
   );
-
 
 //Edit Route
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.renderEditForm));

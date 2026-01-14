@@ -3,16 +3,33 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 56, 92, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(0, 150, 255, 0.08), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(120, 200, 120, 0.08), transparent 40%),
+    linear-gradient(180deg, #fafafa 0%, #f1f3f6 100%) !important;
+  color: #222 !important;
 }
 
 .container {
     flex: 1;
+    background: transparent !important;
 }
 
 /* Navbar */
 .navbar {
     height: 4.5rem;
-    background-color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 245, 247, 0.85)
+  ) !important;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .navbar-brand {
@@ -72,6 +89,16 @@ body {
 .listing-card {
     border: none !important;
     margin-bottom: 2rem;
+    padding: 6px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
 }
 
 .card-img-top {
@@ -81,7 +108,7 @@ body {
 }
 
 .card-body {
-    padding: 0 !important;
+    padding: 8px 12px !important;
 }
 
 .card-text p {
@@ -92,8 +119,6 @@ body {
     text-decoration: none;
 }
 
-/* Card Effect */
-
 .card-img-overlay {
     opacity: 0;
 }
@@ -103,24 +128,19 @@ body {
     background-color: white;
 }
 
-/* New Page */
-
 .add-btn {
     background-color: #fe424d !important;
     border: none !important;
 }
-
-/* Edit Page */
 
 .edit-btn {
     background-color: #fe424d !important;
     border: none !important;
 }
 
-/* Show Page */
-
 .show-img {
-    height: 30vh;
+    height: 400px !important;
+    object-fit: cover;
 }
 
 .btns {
@@ -134,15 +154,104 @@ body {
 
 .listing-img {
     width: 100%;
-    height: 300px;
+    height: 320px;
     object-fit: cover;
-    border-radius: 12px;
+    object-position: center;
+    border-radius: 14px;
+    display: block;
 }
 
 .all-listings-title {
     margin-top: 10px;
+    margin: 1.2 rem 0 2rem;
+    font-weight: 549;
+    letter-spacing: 0.3px;
 }
 
+#filters {
+  margin: 0.4rem 0 0.3rem;
+  padding-left: 0rem;
+}
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;     
+  font-weight: 600;
+  color: #222;
+  margin-left: 0.2rem;
+}
+
+.filter i {
+  color: #ff4d4f;  
+  font-size: 1.1rem;     
+}
+
+.review-card {
+  background: rgba(207, 210, 214, 0.55) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: (8px);
+  /* background: transparent !important; */
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+/* Review Comment Box Styling */
+#comment.form-control {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #333;
+
+  min-height: 140px;
+  resize: none;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+#comment.form-control:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #41b541;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.25);
+  outline: none;
+}
+
+#comment.form-control:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #41b541;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.25);
+  outline: none;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.invalid-feedback {
+  font-size: 13px;
+  color: #31af4c;
+  margin-top: 6px;
+}
 
 
 
@@ -163,7 +272,6 @@ body {
   color: #222;
 }
 
-/* TOP LOGO */
 .top-logo {
   width: 100%;
   padding: 18px 40px;
@@ -183,7 +291,6 @@ body {
   color: #222;
 }
 
-/* CENTER HEADING */
 .heading {
   text-align: center;
   padding: 20px 20px 0px;
@@ -246,7 +353,6 @@ body {
   max-width: 500px;
 }
 
-/* BUTTONS */
 .buttons {
   display: flex;
   gap: 18px;
@@ -276,7 +382,6 @@ body {
   transition: 0.3s;
 }
 
-/* RIGHT CARD */
 .hero-card {
   background: #f3f4f6;
   border-radius: 20px;
@@ -305,7 +410,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-box {
     grid-template-columns: 1fr;
@@ -319,43 +423,13 @@ body {
 
 
 
-/* 
+
 .home-topbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-}
-
-.home-auth {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  white-space: nowrap; 
-}
-
-.home-auth a {
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #222;
-}
-
-.signup-btn {
-  background: #ff385c;
-  color: #fff !important;
-  padding: 6px 14px;
-  border-radius: 18px;
-  font-size: 0.9rem;
-} */
-
-
-/* .home-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 15px;
+  position: relative;  
 }
 
 .home-auth {
@@ -368,6 +442,7 @@ body {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  font-size: 15px;
 }
 
 .signup-btn {
@@ -390,100 +465,21 @@ body {
   background-color: #e11d48;
 }
 
-
-.home-auth span {
-  background: #f1f3f5;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.home-auth a[href="/logout"] {
-  color: #ff385c;
-  border: 1px solid #ff385c;
-  padding: 8px 18px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.2s;
-  white-space: nowrap;
-  min-width: 80px;
-  text-align: center;
-}
-
-.home-auth a[href="/logout"]:hover {
-  background: #ff385c;
-  color: white;
-}
-
- */
-
-
-
-
-
-
-.home-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 15px;
-  position: relative;   /* ⭐ required for center hello */
-}
-
-.home-auth {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* Login link */
-.login-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 15px;
-}
-
-/* Signup button */
-.signup-btn {
-  background-color: #ff385c;
-  color: white !important;
-  padding: 6px 20px;
-  border-radius: 20px;
-  height: 42px;
-  font-size: 15px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  min-width: 80px;
-  text-decoration: none;
-}
-
-.signup-btn:hover {
-  background-color: #e11d48;
-}
-
-/* ========================= */
 /* ⭐ CENTER HELLO USERNAME */
-/* ========================= */
 .home-auth span {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
-  padding: 8px 22px;
-  border-radius: 30px;
-  font-size: 16px;
+  padding: 12px 36px;
+  min-width: 220px;
+  text-align: center;
+  border-radius: 35px;
+  font-size: 18px;
   font-weight: 600;
-  color: #444;
+  color: #ff385c;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 /* Logout button (right side) */
@@ -500,15 +496,13 @@ body {
   min-width: 80px;
   text-align: center;
   position: relative;
-  z-index: 2;   /* center text ke upar na aaye */
+  z-index: 2;  
 }
 
 .home-auth a[href="/logout"]:hover {
   background: #ff385c;
   color: white;
 }
-
-
 
 /* Navbar auth buttons (Login / Signup / Logout) */
 .nav-auth-btnn {
@@ -522,7 +516,6 @@ body {
   justify-content: center;
   margin-left: 10px;
 
-  /* visible on white bg */
   background-color: #fff;
   color: #ff385c;
   border: 1.5px solid #ff385c;
@@ -533,4 +526,54 @@ body {
 .nav-auth-btnn:hover {
   background-color: #ff385c;
   color: #fff;
+}
+
+.nav-item-custom {
+  position: relative;
+  padding: 6px 12px;
+}
+
+/* underline animation */
+.nav-item-custom::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #ff385c;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-item-custom:hover::after {
+  width: 70%;
+}
+
+
+
+
+
+
+
+
+/* Right side auth container already bootstrap flex me hota hai, bas items ko align kar rahe hain */
+
+.nav-username {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  font-weight: 580;
+  color: #222;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 22px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+.nav-username:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
