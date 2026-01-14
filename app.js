@@ -51,9 +51,9 @@ const sessionOptions = {
 };
 
 
-app.get("/", (req, res) => {
-    res.send("Hi, I am Abhay Gupta");
-});
+// app.get("/", (req, res) => {
+//     res.render("home");
+// });
 
 app.use(session(sessionOptions));
 app.use(flash());
@@ -69,6 +69,10 @@ app.use((req, res, next) => {
     res.locals.error = req.flash("error");
     res.locals.currUser = req.user;
     next();
+});
+
+app.get("/", (req, res) => {
+    res.render("home");
 });
 
 
@@ -89,3 +93,10 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
     console.log("server is listening to port 8080");
 }); 
+
+
+
+
+
+
+

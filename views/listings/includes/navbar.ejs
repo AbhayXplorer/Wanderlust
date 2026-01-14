@@ -17,10 +17,10 @@
       </div>
       <div class="navbar-nav ms-auto">
         <% if(!currUser) { %>
-          <a class="nav-link" href="/signup">Sign up</a>
-          <a class="nav-link" href="/login">Log in</a>
+          <a class="nav-auth-btnn" href="/login">Log in</a>
+          <a class="nav-auth-btnn" href="/signup">Sign up</a>
         <% } %> <% if(currUser) { %>
-          <a class="nav-link" href="/logout">Log out</a>
+          <a class="nav-auth-btnn" href="/logout">Log out</a>
         <% } %>
       </div>
     </div>

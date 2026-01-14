@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wanderlust | Home</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="home-topbar">
+  <!-- TOP LOGO -->
+  <div class="top-logo">
+    <i class="fa-solid fa-compass"></i>
+    <span>Wanderlust</span>
+  </div>
+
+  <!-- Right Auth -->
+  <div class="home-auth">
+    <% if(!currUser) { %>
+      <a class="login-link" href="/login">Login</a>
+      <a class="signup-btn" href="/signup">Sign up</a>
+    <% } else { %>
+      <span class="login-link">Hello, <%= currUser.username %></span>
+      <a class="login-link" href="/logout">Log out</a>
+    <% } %>
+  </div>
+</div>
+
+  <!-- CENTER HEADING -->
+  <div class="heading">
+    <h1>Welcome to Wanderlust</h1>
+    <span>Discover stays • Explore destinations • Travel better</span>
+  </div>
+
+  <!-- HERO CONTENT -->
+  <section class="hero">
+    <div class="hero-box">
+
+      <!-- LEFT -->
+      <div class="hero-text">
+        <h2>Hi, I am Abhay Gupta 👋</h2>
+        <p>
+          Discover beautiful places to stay, explore new destinations,
+          and find your perfect getaway — all in one place.
+        </p>
+
+        <div class="buttons">
+          <a href="/listings" class="btn-primary">Explore Listings</a>
+          <a href="/listings/new" class="btn-secondary">Add Your Place</a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-card">
+        <div class="stat">
+          <span>🏖️</span>
+          <div>
+            <h3>Beach Homes</h3>
+            <p>Relax near the sea</p>
+          </div>
+        </div>
+
+        <div class="stat">
+          <span>🏔️</span>
+          <div>
+            <h3>Mountain Retreats</h3>
+            <p>Peaceful nature stays</p>
+          </div>
+        </div>
+
+        <div class="stat">
+          <span>🏙️</span>
+          <div>
+            <h3>City Apartments</h3>
+            <p>Live in the heart of cities</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
