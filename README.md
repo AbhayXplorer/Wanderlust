@@ -21,7 +21,7 @@ Users can explore travel destinations, add new listings, review places, and mana
 ## 🛠️ Tech Stack
 
 ### Frontend
-- EJS (Embedded JavaScript Templates)
+- EJS
 - CSS
 - Bootstrap
 
@@ -34,15 +34,11 @@ Users can explore travel destinations, add new listings, review places, and mana
 ### Authentication & Security
 - Passport.js
 - Express-Session
-- Connect-Mongo (MongoDB Session Store)
+- Connect-Mongo
 - bcrypt
-
-### Cloud & Tools
-- MongoDB Atlas
-- Cloudinary
-- dotenv
-- Git & GitHub
 
 ---
 
-## 📂 Project Structure
+## ⚙️ Environment Variables
+
+Create a `.env` file in the root directory:
