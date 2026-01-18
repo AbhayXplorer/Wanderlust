@@ -57,13 +57,14 @@ body {
 .f-info-links a {
     text-decoration: none;
     color: #222222;
+    margin: 0 5px;
 }
 
 .f-info-links a:hover {
     text-decoration: underline;
 }
 
-.f-info-links, .f-info-socials, .f-info-brand {
+.f-info-links, .f-info-socials, .f-info-brand, .f-info-regular {
     width: 100%;
     display: flex;
     align-items: center;
@@ -465,6 +466,138 @@ body {
   background-color: #e11d48;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+   MOBILE NAVBAR FIX (ONLY MOBILE)
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Collapse background */
+  .navbar-collapse {
+    background: #ffffff;
+    padding: 16px;
+    margin-top: 10px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Make links vertical */
+  .navbar-nav {
+    gap: 12px;
+  }
+
+  /* Auth buttons full width */
+  .nav-auth-btnn {
+    width: 100%;
+    justify-content: center;
+    margin: 6px 0;
+    font-size: 16px;
+  }
+
+  /* Username text center */
+  .nav-username {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #444;
+  }
+
+  /* Normal nav links */
+  .nav-item-custom {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+/* ===============================
+   MOBILE NAVBAR FIX (ONLY MOBILE)
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Collapse background */
+  .navbar-collapse {
+    background: #ffffff;
+    padding: 16px;
+    margin-top: 10px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Make links vertical */
+  .navbar-nav {
+    gap: 12px;
+  }
+
+  /* Auth buttons full width */
+  .nav-auth-btnn {
+    width: 100%;
+    justify-content: center;
+    margin: 6px 0;
+    font-size: 16px;
+  }
+
+  /* Username text center */
+  .nav-username {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #444;
+  }
+
+  /* Normal nav links */
+  .nav-item-custom {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ⭐ CENTER HELLO USERNAME */
 .home-auth span {
   position: absolute;
@@ -577,3 +710,30 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
+
+
+
+
+
+
+
+
+
+
+/*  footer */
+
+.f-info-socials a {
+  color: #555;
+  font-size: 1.4rem;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.f-info-socials a:hover {
+  color: #6c5ce7;         
+  transform: translateY(-4px) scale(1.1);
+} 
+
+
+
