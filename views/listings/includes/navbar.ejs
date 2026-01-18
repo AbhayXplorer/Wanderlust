@@ -3,6 +3,8 @@
     <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i></a>
     <% if(currUser) { %>
       <span class="nav-user-mobile">Hi, <%= currUser.username %></span>
+    <% } else { %>
+      <span class="nav-user-mobile">Welcome 👋 Explore amazing stays</span>
     <% } %>
     <button 
     class="navbar-toggler" 
