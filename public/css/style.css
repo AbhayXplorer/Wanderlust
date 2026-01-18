@@ -330,6 +330,48 @@ body {
   animation: fadeIn 1s ease;
 }
 
+
+
+
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100vh;
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  .hero-box {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .heading {
+    padding: 16px 12px 8px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  footer {
+    margin-top: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -695,6 +737,7 @@ body {
   color: #6c5ce7;         
   transform: translateY(-4px) scale(1.1);
 } 
+
 
 
 
