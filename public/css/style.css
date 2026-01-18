@@ -332,58 +332,6 @@ body {
 
 
 
-
-@media (max-width: 768px) {
-
-  html, body {
-    height: 100%;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero {
-    flex: 1;
-    min-height: 100vh;
-    padding: 16px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .hero-box {
-    width: 100%;
-    grid-template-columns: 1fr;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .heading {
-    padding: 12px;
-    text-align: center;
-  }
-
-  footer {
-    margin-top: auto;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -753,3 +701,89 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================
+   MOBILE FULL PAGE HOME – FINAL FIX
+   ===================================== */
+
+@media (max-width: 768px) {
+
+  /* Base reset */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Hide footer on mobile (IMPORTANT) */
+  footer {
+    display: none !important;
+  }
+
+  /* HERO takes full screen */
+  .hero {
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  /* Stack content vertically */
+  .hero-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Center main text */
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons full width */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Cards stacked */
+  .hero-card {
+    width: 100%;
+  }
+
+}
