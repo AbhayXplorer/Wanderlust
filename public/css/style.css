@@ -470,24 +470,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===============================
-   MOBILE NAVBAR FIX (ONLY MOBILE)
-   =============================== */
 @media (max-width: 768px) {
-
-  /* Collapse background */
   .navbar-collapse {
     background: #ffffff;
     padding: 16px;
@@ -496,12 +479,10 @@ body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   }
 
-  /* Make links vertical */
   .navbar-nav {
     gap: 12px;
   }
 
-  /* Auth buttons full width */
   .nav-auth-btnn {
     width: 100%;
     justify-content: center;
@@ -509,7 +490,6 @@ body {
     font-size: 16px;
   }
 
-  /* Username text center */
   .nav-username {
     display: block;
     text-align: center;
@@ -518,7 +498,42 @@ body {
     color: #444;
   }
 
-  /* Normal nav links */
+  .nav-item-custom {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+
+  
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: #ffffff;
+    padding: 16px;
+    margin-top: 10px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  .navbar-nav {
+    gap: 12px;
+  }
+
+  .nav-auth-btnn {
+    width: 100%;
+    justify-content: center;
+    margin: 6px 0;
+    font-size: 16px;
+  }
+
+  .nav-username {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #444;
+  }
+
   .nav-item-custom {
     padding: 10px 0;
     text-align: center;
@@ -530,70 +545,29 @@ body {
 
 
 
-/* ===============================
-   MOBILE NAVBAR FIX (ONLY MOBILE)
-   =============================== */
-@media (max-width: 768px) {
-
-  /* Collapse background */
-  .navbar-collapse {
-    background: #ffffff;
-    padding: 16px;
-    margin-top: 10px;
-    border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-  }
-
-  /* Make links vertical */
-  .navbar-nav {
-    gap: 12px;
-  }
-
-  /* Auth buttons full width */
-  .nav-auth-btnn {
-    width: 100%;
-    justify-content: center;
-    margin: 6px 0;
-    font-size: 16px;
-  }
-
-  /* Username text center */
-  .nav-username {
-    display: block;
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: 600;
-    color: #444;
-  }
-
-  /* Normal nav links */
-  .nav-item-custom {
-    padding: 10px 0;
-    text-align: center;
-  }
+/* ===== Mobile centered username beside logo ===== */
+.nav-user-mobile {
+  display: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 768px) {
+  .nav-user-mobile {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    white-space: nowrap;
+    z-index: 1051;
+  }
+}
 
 
 
@@ -686,17 +660,12 @@ body {
 
 
 
-
-
-
-
-/* Right side auth container already bootstrap flex me hota hai, bas items ko align kar rahe hain */
-
 .nav-username {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 6px 16px;
+  padding: 10px 16px;
   font-size: 0.95rem;
   font-weight: 580;
   color: #222;
@@ -710,14 +679,6 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
-
-
-
-
-
-
-
-
 
 
 /*  footer */

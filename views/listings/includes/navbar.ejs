@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i></a>
+    <% if(currUser) { %>
+      <span class="nav-user-mobile">Hi, <%= currUser.username %></span>
+    <% } %>
     <button 
     class="navbar-toggler" 
     type="button" 
@@ -20,7 +23,7 @@
           <a class="nav-auth-btnn" href="/login">Log in</a>
           <a class="nav-auth-btnn" href="/signup">Sign up</a>
         <% } %> <% if(currUser) { %>
-          <span class="nav-username">Hi, <%= currUser.username %></span>
+          <span class="nav-username d-none d-md-inline">Hi, <%= currUser.username %></span>
           <a class="nav-auth-btnn" href="/logout">Log out</a>
         <% } %>
       </div>
